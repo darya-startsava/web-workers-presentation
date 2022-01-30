@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Web Workers Presentation</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/blood.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Web Workers</h1>
+                <p>Presentation by Darya Startsava</p>
+            </section>
+            <section>
+                <h2>Problem statement</h2>
+                <p>How to perform a CPU intensive task on the client side using the single-thread language?</p>
+            </section>
+            <section>
+                <h2>Web Worker</h2>
+                <img src="./working-of-web-worker.png" alt="Working of Web Worker">
+            </section>
+            <section>
+                <h2>Demo</h2>
+                <p><a href="https://darya-startsava.github.io/web-workers-demo/">Deploy:
+                        https://darya-startsava.github.io/web-workers-demo/</a></p>
+                <p><a href="https://github.com/darya-startsava/web-workers-demo/tree/main">Source:
+                        https://github.com/darya-startsava/web-workers-demo/tree/main</a></p>
+            </section>
+            <section>
+                <h2>Web Worker API</h2>
+                <pre>
+                    <code>
+                        const worker = new Worker();
+                        worker.onmessage = function(e) { /* ... */ };
+                        worker.postMessage(message, [transfer]);
+                        worker.terminate();
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>Restrictions:</h2>
+                <ul>
+                    <li>Web Workers don’t have access to the window</li>
+                    <li>Web Workers don’t have access to the DOM</li>
+                    <li>Communication between Web Workers and main thread is only performed by messages.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Thank you!</h2>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
+
+</html>
