@@ -1,1 +1,1 @@
-# web-workers-presentation
+Deploy: https://darya-startsava.github.io/web-workers-presentation/
