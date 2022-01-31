@@ -41,7 +41,7 @@
                 <h2>Web Worker API</h2>
                 <pre>
                     <code>
-                        const worker = new Worker();
+                        const worker = new Worker(aURL, options);
                         worker.onmessage = function(e) { /* ... */ };
                         worker.postMessage(message, [transfer]);
                         worker.terminate();
