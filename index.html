@@ -44,6 +44,8 @@
                         const worker = new Worker(aURL, options);
                         worker.onmessage = function(e) { /* ... */ };
                         worker.postMessage(message, [transfer]);
+                        worker.onerror = function(event) { /* ... */ };
+                        worker.onmessageerror = function() { /* ... */ };
                         worker.terminate();
                     </code>
                 </pre>
